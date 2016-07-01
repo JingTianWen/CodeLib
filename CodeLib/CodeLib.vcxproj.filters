@@ -33,6 +33,12 @@
     <ClInclude Include="test\test.h">
       <Filter>test</Filter>
     </ClInclude>
+    <ClInclude Include="ensure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="compile_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="test\test_chain.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test_ensure.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test_compile_string.cpp">
       <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>

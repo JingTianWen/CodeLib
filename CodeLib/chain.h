@@ -1,7 +1,7 @@
 #pragma once
 
 template<typename Type, typename Last>
-auto chain(Last last)->decltype(last)
+auto chain(Last last)//->decltype(last)
 {
 	return last;
 }
