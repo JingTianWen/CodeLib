@@ -2,6 +2,10 @@
 #include <exception>
 #include <sstream>
 #include <assert.h>
+#include <fstream>
+#include <windows.h>
+
+std::string __ensure_out_dir;
 
 class EnsureHelper
 {
@@ -41,8 +45,26 @@ public:
 	}
 	~EnsureHelper()
 	{
+		std::ofstream fout;
+		SYSTEMTIME time;
+		GetLocalTime(&time);
+		char buf[255];
+		sprintf(
+			buf, "%d-%d-%d %d:%d:%d:%d %d.log"
+			, time.wYear, time.wMonth, time.wDay
+			, time.wHour, time.wMinute, time.wSecond, time.wMilliseconds
+			, GetCurrentThreadId()
+			);
+		auto filename = __ensure_out_dir + "\\" + buf;
+		fout.open(filename, std::ios_base::out | std::ios_base::binary | std::ios_base::ate);
+		fout.write(&_str[0], _str.size());
 	}
 };
+
+void initEnsure(const std::string &outDir)
+{
+	__ensure_out_dir = outDir;
+}
 
 #define ENSURE_A(x) ENSURE_(x, B)
 #define ENSURE_B(x) ENSURE_(x, A)

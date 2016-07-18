@@ -6,8 +6,8 @@
 int main()
 {
 	//test_chain();
-	//test_ensure();
-	test_compile_string();
+	test_ensure();
+	//test_compile_string();
     return 0;
 }
 
