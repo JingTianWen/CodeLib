@@ -36,6 +36,9 @@
     <ClInclude Include="ensure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ClipBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="test_ensure.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipBox.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
